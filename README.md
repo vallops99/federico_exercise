@@ -8,9 +8,9 @@ Come utente:<br>
 <ul>
 <li>Voglio vedere la lista di tutte le università filtrate per il paese scelto dall’utente.</li>
 <li>Voglio vedere il numero totale di università per il paese scelto</li>
-<ul>
-Per ogni università voglio vedere:<br>
 </ul>
+Per ogni università voglio vedere:<br>
+<ul>
 <li>Nome</li>
 <li>Link al sito web</li>
 </ul>
