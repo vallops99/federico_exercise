@@ -1,0 +1,29 @@
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 3rem;
+
+    padding: 0 1rem;
+
+    background-color: #2151E5;
+}
+
+.navbar .link-container {
+    padding-right: 1rem;
+}
+
+.navbar .link-container a {
+    color: white;
+
+    text-decoration: none;
+}
+
+.navbar .link-container a:hover {
+    color: grey;
+}
+
+.navbar .link-container:first-of-type {
+    padding-right: 2rem;
+}

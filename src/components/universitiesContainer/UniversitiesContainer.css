@@ -1,0 +1,44 @@
+.universities-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+}
+
+.universities-container .universities-description {
+    width: fit-content;
+}
+
+.universities-container .universities-description.quantity-0 {
+    display: none;
+}
+
+.universities-container .universities-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.universities-container .universities-list .university-item {
+    width: 30%;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 0.5rem;
+    border-bottom: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+}
+
+@media only screen and (max-width: 500px) {
+    .universities-container .universities-list .university-item {
+        height: 6rem;
+    }
+}

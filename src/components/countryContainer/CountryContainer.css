@@ -1,0 +1,11 @@
+.country-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: fit-content;
+}
+
+.country-container .country-title {
+    text-align: center;
+}
