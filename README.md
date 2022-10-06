@@ -10,7 +10,7 @@ Come utente:<br>
 <li>Voglio vedere il numero totale di università per il paese scelto</li>
 <ul>
 Per ogni università voglio vedere:<br>
-<ul>
+</ul>
 <li>Nome</li>
 <li>Link al sito web</li>
 </ul>
