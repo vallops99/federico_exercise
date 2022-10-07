@@ -29,3 +29,14 @@ Tests(non obbligatorio)<br>
 Storybook(non obbligatorio)<br>
 No React-Boilerplate<br>
 No package di terze parti per i componenti<br>
+
+## Build
+Frontend:<br>
+- Node version: 15.3.0;
+- `cd frontend && npm install`;
+- `npm start`;
+
+Backend:<br>
+- Python version: 3.10.0;
+- `cd backend && pip install -r requirements.txt`;
+- `python manage.py runserver`;

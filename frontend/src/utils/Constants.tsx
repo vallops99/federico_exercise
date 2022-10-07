@@ -1,1 +1,1 @@
-export const API =  "http://universities.hipolabs.com/search";
+export const API =  "http://localhost:8000/get-universities";
