@@ -6,6 +6,10 @@
 
     border: none;
     border-bottom: 1px solid lightgrey;
+
+    background-color: var(--background-color);
+
+    color: var(--secondary-color);
 }
 
 .textfield:focus-visible {

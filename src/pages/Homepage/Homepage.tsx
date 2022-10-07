@@ -1,9 +1,9 @@
 import Axios from "axios";
-import { API } from '../../constants';
+import { API } from '../../utils';
 import { useCallback, useState } from "react";
-import { Loader, UniversitiesContainer, CountryContainer } from "..";
+import { Loader, UniversitiesContainer, Container, TextField, Button } from "../../components";
 
-import "./UniversitiesHandler.css";
+import "./Homepage.css";
 
 
 export interface IUniversity {
@@ -16,13 +16,13 @@ export interface IUniversity {
     web_pages: string[];
 }
 
-export function UniversitiesHandler() {
+export function Homepage() {
     const [country, setCountry] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [lastCountry, setLastCountry] = useState("");
     const [universities, setUniversities] = useState<IUniversity[]>([]);
 
-    const searchButtonHandler = useCallback(() => {
+    const onButtonClick = useCallback(() => {
         setIsLoading(true);
 
         setLastCountry(country);
@@ -35,13 +35,19 @@ export function UniversitiesHandler() {
         });
     }, [country]);
 
-    const countryTextHandler = useCallback((value : string) => {
+    const onTextChange = useCallback((value : string) => {
         setCountry(value);
     }, []);
 
     return (
-        <div className='page-container'>
-            <CountryContainer searchHandler={searchButtonHandler} countryHandler={countryTextHandler} />
+        <div className="page-container">
+            <Container className="country-container">
+                <h2 className='country-title'>Write a country and get its universities</h2>
+                <TextField onChange={onTextChange} placeholder='Write a country' />
+                <Button onClick={onButtonClick}>
+                    Search
+                </Button>
+            </Container>
             {isLoading ? <Loader /> : <UniversitiesContainer universities={universities} country={lastCountry} />}
         </div>
     );

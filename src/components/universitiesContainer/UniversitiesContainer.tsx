@@ -1,4 +1,4 @@
-import { IUniversity } from "..";
+import { IUniversity } from "../../pages";
 
 import './UniversitiesContainer.css';
 
@@ -20,7 +20,7 @@ export function UniversitiesContainer({ universities, country } : IUniversitiesC
                 {universities.map((uni, index) => {
                     return (
                         <div className="university-item" key={index}>
-                            <a href={uni.domains[0]}>{uni.name}</a>
+                            <a href={uni.web_pages[0]}>{uni.name}</a>
                         </div>
                     );
                 })}

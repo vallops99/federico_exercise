@@ -9,6 +9,8 @@
 
 .universities-container .universities-description {
     width: fit-content;
+
+    color: var(--secondary-color);
 }
 
 .universities-container .universities-description.quantity-0 {

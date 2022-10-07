@@ -1,0 +1,17 @@
+:root,
+::after,
+::before {
+    --primary-color: #f8f8fa;
+    --secondary-color: #000;
+    --background-color: #fff;
+    --link-color: -webkit-link;
+}
+
+.theme-dark,
+.theme-dark ::after,
+.theme-dark ::before {
+    --primary-color: #36394c;
+    --secondary-color: #eff2f7;
+    --background-color: #222736;
+    --link-color: #afaf00;
+}

@@ -1,6 +1,13 @@
+.main-container {
+    height: fit-content;
+    min-height: 100%;
+
+    background-color: var(--background-color);
+}
+
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 
     height: 3rem;
@@ -10,20 +17,28 @@
     background-color: #2151E5;
 }
 
-.navbar .link-container {
+.navbar .nav-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+.navbar .nav-side .link-container {
     padding-right: 1rem;
 }
 
-.navbar .link-container a {
+.navbar .nav-side .link-container a {
     color: white;
 
     text-decoration: none;
 }
 
-.navbar .link-container a:hover {
+.navbar .nav-side .link-container a:hover {
     color: grey;
 }
 
-.navbar .link-container:first-of-type {
+.navbar .nav-side .link-container:first-of-type {
     padding-right: 2rem;
 }
