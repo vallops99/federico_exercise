@@ -16,7 +16,7 @@ export function Navbar() {
     }, [setTheme]);
 
     const mainContainerClasses = `main-container theme-${theme}`;
-    const activeStyle = { "text-decoration": "underline" };
+    const activeStyle = { "textDecoration": "underline" };
 
     return (
         <div className={mainContainerClasses}>

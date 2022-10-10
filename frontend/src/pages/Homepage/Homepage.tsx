@@ -77,7 +77,6 @@ export function Homepage() {
     );
 
     useEffect(() => {
-        console.log("use effect firing");
         if (!fireSearch) return;
 
         onButtonSearchClick();
