@@ -86,8 +86,8 @@ export function Homepage() {
         <div className="page-container">
             <Container className="country-container">
                 <H2>Write a country and/or a name and get universities</H2>
-                <TextField onChange={onTextCountryChange} placeholder='Write a country' />
-                <TextField onChange={onTextNameChange} placeholder='Write a portion of a university name' />
+                <TextField onChange={onTextCountryChange} placeholder='eg. Italy' />
+                <TextField onChange={onTextNameChange} placeholder='eg. sap of "Sapienza"' />
                 <Button type="primary" onClick={onButtonSearchClick}>
                     Search
                 </Button>

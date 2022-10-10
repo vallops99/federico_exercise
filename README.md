@@ -39,4 +39,4 @@ Frontend:<br>
 Backend:<br>
 - Python version: 3.10.0;
 - `cd backend && pip install -r requirements.txt`;
-- `python manage.py runserver`;
+- `./run_django.sh`;
