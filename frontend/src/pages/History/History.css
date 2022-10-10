@@ -1,0 +1,25 @@
+.history-container .custom-link {
+    border: none;
+
+    background-color: var(--background-color);
+    color: var(--link-color);
+
+    cursor: pointer;
+}
+
+.history-container .custom-link:hover {
+    text-decoration: underline;
+}
+
+.history-container .researches-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-container .researches-container .research {
+    margin: 2rem;
+
+    text-align: center;
+}

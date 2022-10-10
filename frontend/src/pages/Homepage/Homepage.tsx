@@ -1,7 +1,9 @@
 import Axios from "axios";
+import { useCallback, useEffect, useState } from "react";
+
 import { API } from '../../utils';
-import { useCallback, useState } from "react";
-import { Loader, UniversitiesContainer, Container, TextField, Button } from "../../components";
+import { useSearch } from "../../hooks";
+import { H2, Loader, UniversitiesContainer, Container, TextField, Button } from "../../components";
 
 import "./Homepage.css";
 
@@ -17,38 +19,93 @@ export interface IUniversity {
 }
 
 export function Homepage() {
-    const [country, setCountry] = useState("");
+    const { searched, toSearch, fireSearch, setSearched, setFireSearch } = useSearch();
+
+    const [name, setName] = useState(toSearch.name);
+    const [country, setCountry] = useState(toSearch.country);
+    const [lastName, setLastName] = useState(toSearch.name);
+    const [lastCountry, setLastCountry] = useState(toSearch.country);
+
+    const [isStart, setIsStart] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-    const [lastCountry, setLastCountry] = useState("");
+
     const [universities, setUniversities] = useState<IUniversity[]>([]);
 
-    const onButtonClick = useCallback(() => {
-        setIsLoading(true);
-
-        setLastCountry(country);
-
+    const loadUniversities = useCallback((country : string, name : string) => {
         Axios.get(API, {
-            params: { country }
+            params: { country, name }
         }).then(response => {
             setUniversities(response.data);
+
+            setIsStart(false);
             setIsLoading(false);
         });
-    }, [country]);
+    }, []);
 
-    const onTextChange = useCallback((value : string) => {
+    const onButtonSearchClick = useCallback(() => {
+        setIsLoading(true);
+
+        setLastName(name);
+        setLastCountry(country);
+
+        const newSearched = [...searched, { country, name }];
+        setSearched(newSearched);
+
+        loadUniversities(country, name);
+        
+    }, [country, name, searched, setSearched, loadUniversities]);
+
+    const onButtonResetClick = useCallback(() => {
+        setName("");
+        setCountry("");
+        setLastName("");
+        setLastCountry("");
+
+        setIsStart(true);
+
+        setUniversities([]);
+    }, [])
+
+    const onTextCountryChange = useCallback((value : string) => {
         setCountry(value);
     }, []);
+
+    const onTextNameChange = useCallback((value : string) => {
+        setName(value);
+    }, []);
+
+    useEffect(() => {
+        if (!fireSearch) return;
+
+        onButtonSearchClick();
+        setFireSearch(false);
+
+    }, [fireSearch, onButtonSearchClick, setFireSearch]);
 
     return (
         <div className="page-container">
             <Container className="country-container">
-                <h2 className='country-title'>Write a country and get its universities</h2>
-                <TextField onChange={onTextChange} placeholder='Write a country' />
-                <Button onClick={onButtonClick}>
+                <H2>Write a country and/or a name and get universities</H2>
+                <TextField onChange={onTextCountryChange} placeholder='Write a country' />
+                <TextField onChange={onTextNameChange} placeholder='Write a portion of a university name' />
+                <Button type="primary" onClick={onButtonSearchClick}>
                     Search
                 </Button>
+                <Button type="danger" onClick={onButtonResetClick}>
+                    Reset
+                </Button>
             </Container>
-            {isLoading ? <Loader /> : <UniversitiesContainer universities={universities} country={lastCountry} />}
+            {
+                isLoading ?
+                <Loader /> :
+                <UniversitiesContainer
+                    name={lastName}
+                    country={lastCountry}
+                    universities={universities}
+
+                    isStart={isStart}
+                />
+            }
         </div>
     );
 }

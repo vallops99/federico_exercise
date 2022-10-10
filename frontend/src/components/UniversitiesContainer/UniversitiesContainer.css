@@ -13,7 +13,7 @@
     color: var(--secondary-color);
 }
 
-.universities-container .universities-description.quantity-0 {
+.universities-container .universities-description.start-true {
     display: none;
 }
 

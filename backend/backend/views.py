@@ -9,8 +9,15 @@ import requests
 
 @api_view(['GET'])
 def get_universities(request):
+    name = request.GET.get('name', '')
     country = request.GET.get('country', '')
-    response = requests.get(settings.API, params={ 'country': country })
+
+    response = requests.get(
+        settings.API,
+        params={
+            'country': country,
+            'name': name
+        })
 
     if (response.status_code == 200):
         return Response(response.json())

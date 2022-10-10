@@ -5,9 +5,3 @@
 
     width: fit-content;
 }
-
-.country-container .country-title {
-    text-align: center;
-
-    color: var(--secondary-color);
-}

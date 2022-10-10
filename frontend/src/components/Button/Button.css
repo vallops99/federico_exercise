@@ -4,13 +4,25 @@
 
     margin-top: 1rem;
 
-    background-color: #3161F5;
     color: white;
+
     border-width: 1px;
     border-radius: 1rem;
     cursor: pointer;
 }
 
-.button:hover {
+.button.type-primary {
+    background-color: #3161F5;
+}
+
+.button.type-danger {
+    background-color: #C71034;
+}
+
+.button.type-primary:hover {
     background-color: #2151E5;
+}
+
+.button.type-danger:hover {
+    background-color: #A71034;
 }

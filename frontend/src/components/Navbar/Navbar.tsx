@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Route, Link, Routes } from "react-router-dom";
 
 import { Homepage, History } from "../../pages";
 import { useTheme } from "../../hooks";
@@ -33,14 +33,10 @@ export function Navbar() {
                 </div>
             </nav>
 
-            <Switch>
-                <Route path="/history">
-                    <History />
-                </Route>
-                <Route path="/">
-                    <Homepage />
-                </Route>
-            </Switch>
+            <Routes>
+                <Route path="/history" element={<History />} />
+                <Route path="/" element={<Homepage />} />
+            </Routes>
         </div>
     )
 }

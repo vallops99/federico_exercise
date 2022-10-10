@@ -1,3 +1,4 @@
+export * from "./H2/H2";
 export * from "./Loader/Loader";
 export * from "./Navbar/Navbar";
 export * from "./Button/Button";

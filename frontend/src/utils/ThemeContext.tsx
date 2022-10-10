@@ -18,9 +18,9 @@ interface Props {
 }
 
 export function ThemeContextProvider({ children } : Props) {
-    const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isBrowserDefaultDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
     
-    const [theme, setTheme] = useState<Theme>(isBrowserDefaultDark() ? 'dark' : 'light');
+    const [theme, setTheme] = useState<Theme>(isBrowserDefaultDark() ? "dark" : "light");
 
     const value = useMemo(() => ({ theme, setTheme }), [theme, setTheme]);
 
