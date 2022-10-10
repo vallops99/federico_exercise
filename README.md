@@ -32,7 +32,7 @@ No package di terze parti per i componenti<br>
 
 ## Build
 Frontend:<br>
-- Node version: 15.3.0;
+- Node version: 18.10.0;
 - `cd frontend && npm install`;
 - `npm start`;
 
