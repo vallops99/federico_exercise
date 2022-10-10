@@ -77,12 +77,15 @@ export function Homepage() {
     );
 
     useEffect(() => {
+        console.log("firing search");
         if (!fireSearch) return;
 
         onButtonSearchClick();
-        setFireSearch(false);
 
-    }, [fireSearch, onButtonSearchClick, setFireSearch]);
+        setName("");
+        setCountry("");
+        setFireSearch(false);
+    });
 
     return (
         <div className="page-container">
