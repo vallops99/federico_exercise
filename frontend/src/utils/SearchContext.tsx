@@ -35,7 +35,7 @@ interface Props {
 }
 
 export function SearchContextProvider({ children } : Props) {
-    const [fireSearch, setFireSearch] = useState(false);
+    const [fireSearch, setFireSearch] = useState(DEFAULT_VALUE.fireSearch);
     const [toSearch, setToSearch] = useState<Research>(DEFAULT_VALUE.toSearch);
     const [searched, setSearched] = useState<Research[]>(DEFAULT_VALUE.searched);
 
