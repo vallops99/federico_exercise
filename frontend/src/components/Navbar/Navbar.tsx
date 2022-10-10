@@ -11,8 +11,8 @@ import "./Navbar.css";
 export function Navbar() {
     const { theme, setTheme } = useTheme();
 
-    const onThemeChange = useCallback((value : boolean) => {
-        setTheme(value ? 'light' : 'dark');
+    const onThemeChange = useCallback((event : React.ChangeEvent<HTMLInputElement>) => {
+        setTheme(event.currentTarget.value ? 'light' : 'dark');
     }, [setTheme]);
 
     const mainContainerClasses = `main-container theme-${theme}`;

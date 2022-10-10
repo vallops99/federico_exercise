@@ -2,16 +2,16 @@ import { ReactNode } from 'react';
 
 import './Button.css';
 
-interface IButtonProps {
+interface Props {
     type: string,
-    onClick: () => void,
+    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
     children: ReactNode
 }
 
-export function Button({ type, onClick, children } : IButtonProps) {
+export function Button({ type, onClick, children } : Props) {
     const classes = `button type-${type}`;
     return (
-        <button className={classes} onClick={(event) => onClick() }>
+        <button className={classes} onClick={(event) => onClick(event) }>
             {children}
         </button>
     );

@@ -3,14 +3,14 @@ import { IUniversity } from "../../pages";
 import './UniversitiesContainer.css';
 
 
-interface IUniversitiesContainerProps {
+interface Props {
     name: string;
     country: string;
     isStart: boolean;
     universities: IUniversity[];
 }
 
-export function UniversitiesContainer({ name, country, isStart, universities } : IUniversitiesContainerProps) {
+export function UniversitiesContainer({ name, country, isStart, universities } : Props) {
     const descriptionClasses = `universities-description start-${isStart}`;
 
     return (

@@ -1,17 +1,17 @@
 import './TextField.css';
 
-interface ITextFieldProps {
-    onChange: (value: string) => void;
+interface Props {
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     placeholder: string;
 }
 
-export function TextField({ onChange, placeholder } : ITextFieldProps) {
+export function TextField({ onChange, placeholder } : Props) {
     return (
         <input
             type='text'
             className="textfield"
             placeholder={placeholder}
-            onChange={(event) => onChange(event.currentTarget.value)}
+            onChange={(event) => onChange(event)}
         />
     );
 }

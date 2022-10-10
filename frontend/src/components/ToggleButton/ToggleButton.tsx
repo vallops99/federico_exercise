@@ -1,12 +1,12 @@
 import './ToggleButton.css';
 
 
-interface IToggleButtonProps {
-    onChange: (value : boolean) => void;
+interface Props {
+    onChange: (value : React.ChangeEvent<HTMLInputElement>) => void;
     checked: boolean;
 }
 
-export function ToggleButton({ onChange, checked } : IToggleButtonProps) {
+export function ToggleButton({ onChange, checked } : Props) {
     const sliderClasses = `slider checked-${checked}`;
 
     return (
@@ -16,7 +16,7 @@ export function ToggleButton({ onChange, checked } : IToggleButtonProps) {
                     className="toggle-input"
                     type="checkbox"
                     name="checkbox"
-                    onChange={(event) => onChange(event.currentTarget.checked)}
+                    onChange={(event) => onChange(event)}
                     checked={checked}
                 />
                 <span className={sliderClasses}></span>

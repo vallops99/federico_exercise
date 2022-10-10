@@ -42,7 +42,7 @@ export function Homepage() {
         });
     }, []);
 
-    const onButtonSearchClick = useCallback(() => {
+    const onButtonSearchClick = useCallback((event?: React.SyntheticEvent) => {
         setIsLoading(true);
 
         setLastName(name);
@@ -55,7 +55,7 @@ export function Homepage() {
         
     }, [country, name, searched, setSearched, loadUniversities]);
 
-    const onButtonResetClick = useCallback(() => {
+    const onButtonResetClick = useCallback((event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         setName("");
         setCountry("");
         setLastName("");
@@ -66,15 +66,18 @@ export function Homepage() {
         setUniversities([]);
     }, [])
 
-    const onTextCountryChange = useCallback((value : string) => {
-        setCountry(value);
-    }, []);
+    const onTextCountryChange = useCallback(
+        (event: React.ChangeEvent<HTMLInputElement>) => setCountry(event.currentTarget.value),
+        []
+    );
 
-    const onTextNameChange = useCallback((value : string) => {
-        setName(value);
-    }, []);
+    const onTextNameChange = useCallback(
+        (event: React.ChangeEvent<HTMLInputElement>) => setName(event.currentTarget.value)
+        , []
+    );
 
     useEffect(() => {
+        console.log("use effect firing");
         if (!fireSearch) return;
 
         onButtonSearchClick();

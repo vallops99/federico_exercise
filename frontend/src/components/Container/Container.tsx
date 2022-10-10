@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import './Container.css';
 
 
-interface IContainer {
+interface Props {
     children: ReactNode;
     className: string;
 }
 
-export function Container({ children, className } : IContainer) {
+export function Container({ children, className } : Props) {
     const classes = `container ${className}`;
     return (
         <div className={classes}>
